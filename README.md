@@ -15,8 +15,8 @@ Deployments Steps are as below:
 a. Building the AKS Cluster
 1. Clone the repo using git clone https://github.com/smanjithaya1/AnsibleAKS.git
 2. execute the below commands
-  cd AnsibleAKS
-  ansible-playbook azure_create_aks.yml
+  * cd AnsibleAKS
+  * ansible-playbook azure_create_aks.yml
 3. The above would spin up the AKS Cluster
 
 b. Below are the steps to deploy the sample azure-vote application:
