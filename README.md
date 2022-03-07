@@ -25,5 +25,5 @@ i.   From the AKS Cluster created in the above step, please connect to the clust
 ii.  Verify your connection
      kubectl get nodes
 iii. Execute the below command to deploy the sample application:
-     kubectl apply -f https://raw.githubusercontent.com/Microsoft/PartsUnlimited/master/Labfiles/AZ-400T05_Implementing_Application_Infrastructure/M03/azure-vote.yaml
+     kubectl apply -f https://github.com/smanjithaya1/AnsibleAKS/blob/main/azure-vote.yaml
 
