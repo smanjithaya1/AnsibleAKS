@@ -13,17 +13,17 @@ Please Refer: https://docs.microsoft.com/en-us/azure/developer/ansible/aks-confi
 Deployments Steps are as below:
 
 a. Building the AKS Cluster
-i. Clone the repo using git clone https://github.com/smanjithaya1/AnsibleAKS.git
-ii. execute the below commands
+1. Clone the repo using git clone https://github.com/smanjithaya1/AnsibleAKS.git
+2. execute the below commands
   cd AnsibleAKS
   ansible-playbook azure_create_aks.yml
-iii. The above would spin up the AKS Cluster
+3. The above would spin up the AKS Cluster
 
 b. Below are the steps to deploy the sample azure-vote application:
-i.   From the AKS Cluster created in the above step, please connect to the cluster using azure cli
+1.   From the AKS Cluster created in the above step, please connect to the cluster using azure cli
      az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
-ii.  Verify your connection
+2.  Verify your connection
      kubectl get nodes
-iii. Execute the below command to deploy the sample application:
+3. Execute the below command to deploy the sample application:
      kubectl apply -f https://github.com/smanjithaya1/AnsibleAKS/blob/main/azure-vote.yaml
 
