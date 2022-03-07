@@ -4,12 +4,26 @@ This document explains how to spin up an AKS cluster using ansible and then depl
 
 Pre-requisites:
 1. You must have a Azure Account
-2. You must have a linux VM
-3. You must have installed kubectl and ansible installed in the linux VM
-4. You must execute these steps from that linux VM
+2. Azure service principal: Create a service principal, making note of the following values: appId, displayName, password, and tenant.
+3. You must have a linux VM
+4. You must have installed kubectl and ansible installed in the linux VM
+5. You must execute these steps from that linux VM
+Please Refer: https://docs.microsoft.com/en-us/azure/developer/ansible/aks-configure-clusters
 
 Deployments Steps are as below:
 
 a. Building the AKS Cluster
-Clone the repo using git clone 
+i. Clone the repo using git clone https://github.com/smanjithaya1/AnsibleAKS.git
+ii. execute the below commands
+  cd AnsibleAKS
+  ansible-playbook azure_create_aks.yml
+iii. The above would spin up the AKS Cluster
+
+b. Below are the steps to deploy the sample azure-vote application:
+i.   From the AKS Cluster created in the above step, please connect to the cluster using azure cli
+     az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+ii.  Verify your connection
+     kubectl get nodes
+iii. Execute the below command to deploy the sample application:
+     kubectl apply -f https://raw.githubusercontent.com/Microsoft/PartsUnlimited/master/Labfiles/AZ-400T05_Implementing_Application_Infrastructure/M03/azure-vote.yaml
 
